@@ -61,7 +61,7 @@ export default function HomePage() {
         </div>
         <div className="md:w-1/2 rounded-2xl overflow-hidden shadow-xl">
           <img
-            src="/app.jpg"
+            src="https://utfs.io/f/cqXP9NlENj5xy7mS45FkXVOjicSeLM0hJmF3uKYGqIC5E9rD"
             alt="Music App"
             className="w-full h-auto brightness-80"
           />
