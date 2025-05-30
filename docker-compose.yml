@@ -1,0 +1,23 @@
+services:
+  backend:
+    build: ./backend
+    container_name: sembi-backend
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+
+  frontend:
+    build: ./frontend
+    container_name: sembi-frontend
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./frontend/.env.local
+    volumes:
+      - /app/node_modules
+    depends_on:
+      - backend
