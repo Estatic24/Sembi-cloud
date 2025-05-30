@@ -13,8 +13,12 @@ const wss = new WebSocket.Server({ server })
 
 
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'https://sembi-cloud-git-main-estatic24s-projects.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  origin: [
+    'https://sembi-cloud-git-main-estatic24s-projects.vercel.app',
+    'https://sembi-cloud.vercel.app',
+    'http://localhost:3000'
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 }));
@@ -39,7 +43,7 @@ require('./controllers/commentController')(wss, Comment)
 
 app.use(errorMiddleware);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
