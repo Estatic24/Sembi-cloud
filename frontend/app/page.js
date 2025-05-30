@@ -53,7 +53,7 @@ export default function HomePage() {
             Создавайте, делитесь и открывайте новые плейлисты вместе с сообществом. Реальные взаимодействия в реальном времени.
           </p>
           <Link
-            href={user ? '/library' : '/register'}
+            href={user ? '/playlists' : '/register'}
             className="inline-block px-8 py-3 bg-gradient-to-br from-purple-600 to-purple-400 text-white font-medium rounded-full hover:opacity-90 shadow-lg transition-all"
           >
             Начать бесплатно
