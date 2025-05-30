@@ -30,7 +30,7 @@ export default function PlaylistPage() {
   const connectWebSocket = () => {
     if (!id) return
 
-    const wsUrl = (process.env.NEXT_PUBLIC_WS_URL || 'ws://localhost:5000') + `?playlistId=${id}`
+    const wsUrl = (process.env.NEXT_PUBLIC_WS_URL || 'wss://sembi-cloud.onrender.com') + `?playlistId=${id}`
     wsRef.current = new WebSocket(wsUrl)
 
     wsRef.current.onopen = () => {
